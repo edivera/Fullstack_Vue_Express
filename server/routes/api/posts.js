@@ -3,10 +3,12 @@
 const mongodb = require('mongodb');
 const express = require('express');
 
-const router = express.Router();
+const router = express.Router();    // allows us to create an api out of this file
 
 // Get Posts
 router.get('/', async (req, res) => { // the '/' in this case refers to /routes/api
+    // but in the context of index.js. I think it refers to /
+    // that way this code is usable from another page
     const posts = await loadHostCollection();
     res.send(await posts.find({}).toArray()); // find takes an input query. Blank means all. needed await
 });
@@ -40,4 +42,4 @@ async function loadHostCollection() {
     return client.db('vue_express').collection('posts');
 }
 
-module.exports = router;
+module.exports = router;    // this allows the requests to be used outside, making this an api

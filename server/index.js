@@ -10,8 +10,11 @@ app.use(cors());
 
 // my post apis 
 const posts = require('./routes/api/posts');    // the file path to the api
-app.use('/api/posts', posts);   // the path on the site
+app.use('/api/posts', posts);   // renames the router of the /api/posts to a "posts" 
+                                //   variable for our use in this file
 
 const port = process.env.PORT || 5000;
 
 app.listen(port, () => console.log(`Server started on port ${port}`));
+
+// rest of my code continues here?
