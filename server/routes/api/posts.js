@@ -32,8 +32,8 @@ router.delete('/:id', async (req, res) => {
 
 
 async function loadHostCollection() {
-    const user = 'abc123'; 
-    const password = 'lmao9513';
+    const user = 'abc123';  // these don't exist anymore
+    const password = 'lmao9513';    // these don't exist anymore
     const uri = `mongodb+srv://${user}:${password}@cluster0-plxv3.mongodb.net/vue_express?retryWrites=true&w=majority`;
 
     const client = await mongodb.MongoClient.connect(uri, 
